@@ -1,22 +1,44 @@
-const program = require('commander');
-const api = require('./index.js');
+#! /usr/bin/env node
+
+const program = require("commander");
+const api = require("./index.js");
+const pkg = require("./package.json");
+
+program.version(pkg.version);
+
+// 无任何参数时，输出帮助信息
+if (process.argv.length === 2) {
+  void api.showAll();
+}
 
 program
-    .option('-x, --xxx', '我是一个x测试option')
+  .command("add")
+  .description("add a new task")
+  .action((...args) => {
+    // console.dir('this is add command', args[args.length - 1]);
+    const words = args.slice(0, -1).join(" ");
+    api
+      .add(words)
+      .then(() => {
+        console.log("添加成功");
+      })
+      .catch((err) => {
+        console.log("添加失败", err);
+      });
+  });
 
-
-program.command('add')
-    .description('add a new task')
-    .action((...args) => {
-      // console.dir('this is add command', args[args.length - 1]);
-      const words = args.slice(0, -1).join(' ');
-      api.add(words)
-    });
-
-program.command('clear')
-    .description('clear all tasks')
-    .action(() => {
-      console.log('this is clear command');
-    });
+program
+  .command("clear")
+  .description("clear all tasks")
+  .action(() => {
+    api
+      .clear()
+      .then(() => {
+        console.log("清除成功");
+      })
+      .catch((err) => {
+        console.log("清除失败", err);
+      });
+  });
 
 program.parse(process.argv);
