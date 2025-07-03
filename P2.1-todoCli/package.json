@@ -9,14 +9,17 @@
   "files": [
     "*.js"
   ],
-  "scripts":{
-    "test": "jest"
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "commander": "^3.0.2",
     "inquirer": "^7.0.0"
   },
   "devDependencies": {
-    "jest": "^24.9.0"
+    "jest": "^29.7.0",
+    "prettier": "^3.6.1"
   }
 }
