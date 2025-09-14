@@ -1,15 +1,19 @@
 {
-  "name": "P7-express-d1",
+  "name": "P8.1-express-core1",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node-dev app.js",
+    "start2": "node-dev app2.js",
+    "start3": "node-dev app3.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^3.1.10",
     "express": "^5.1.0"
   },
   "devDependencies": {

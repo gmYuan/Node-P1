@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-var app = require('../app');
+var app = require('../app2.ts');
 var debug = require('debug')('p7.1-express-d2:server');
 var http = require('http');
 
