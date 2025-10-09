@@ -1,0 +1,23 @@
+{
+  "name": "p10-echarts-demo",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev2": "vite --config vite.config.js",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/echarts": "^5.0.0",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "vite": "^4.4.0"
+  },
+  "dependencies": {
+    "echarts": "^6.0.0",
+    "vue": "^3.3.4"
+  }
+}
